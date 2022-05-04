@@ -1,0 +1,93 @@
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #ffffff;
+}
+
+.wrapper {
+    display: flex;
+    height: 100px;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 20px 15px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+
+.wrapper .option {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    background: #fff;
+    border: 2px solid #d9d9d9;
+}
+
+.wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    position: relative;
+    border-radius: 50%;
+}
+
+.wrapper .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #fc5185;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#year-subscription:checked:checked~.option-1,
+#month-subscription:checked:checked~.option-2 {
+    border-color: #0f117a;
+    background: #0f117a;
+}
+
+#year-subscription:checked:checked~.option-1 .dot,
+#month-subscription:checked:checked~.option-2 .dot {
+    background: #fff;
+}
+
+#year-subscription:checked:checked~.option-1 .dot::before,
+#month-subscription:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper .option span {
+    font-size: 20px;
+    columns: #808080;
+}
+
+#year-subscription:checked:checked~.option-1 span,
+#month-subscription:checked:checked~.option-2 span {
+    color: #fff;
+}
